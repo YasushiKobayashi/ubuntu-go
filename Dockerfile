@@ -15,12 +15,6 @@ RUN wget --no-check-certificate https://storage.googleapis.com/golang/go${GO_V}.
   mkdir -p $GOPATH/bin && \
   curl https://glide.sh/get | sh
 
-# install imagemagick
-# RUN apt-get update && \
-#   apt-get install -y imagemagick
-# RUN apt-get update && \
-#   apt-get install -y libmagickwand-dev libmagickcore-dev
-
 # Install webp
 RUN apt-get -q -y install libjpeg-dev libpng-dev libtiff-dev libgif-dev
 RUN wget http://downloads.webmproject.org/releases/webp/libwebp-0.4.2.tar.gz && \
