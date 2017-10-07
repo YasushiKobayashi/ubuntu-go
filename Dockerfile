@@ -2,7 +2,7 @@ FROM ubuntu:16.04
 MAINTAINER Yasushi Kobayashi <ptpadan@gmail.com>
 
 RUN apt-get update && \
-  apt-get install -y wget curl git build-essential pkg-config gzip
+  apt-get install -y wget curl git build-essential pkg-config gzip ca-certificates
 
 # setup golang glide
 WORKDIR /usr/local
@@ -14,7 +14,8 @@ RUN wget https://storage.googleapis.com/golang/go${GO_V}.linux-amd64.tar.gz && \
   tar -zxvf go${GO_V}.linux-amd64.tar.gz
 
 # Install webp
-RUN apt-get -q -y install libjpeg-dev libpng-dev libtiff-dev libgif-dev
+RUN apt-get update && \
+  apt-get install -y libjpeg-dev libpng-dev libtiff-dev libgif-dev
 RUN wget http://downloads.webmproject.org/releases/webp/libwebp-0.4.2.tar.gz && \
 	tar xvzf libwebp-0.4.2.tar.gz && \
 	cd libwebp-0.4.2 && \
