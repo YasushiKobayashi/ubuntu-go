@@ -11,9 +11,7 @@ ENV PATH=$PATH:/usr/local/go/bin
 ENV GOPATH=/work/go
 ENV PATH=$PATH:$GOPATH/bin
 RUN wget https://storage.googleapis.com/golang/go${GO_V}.linux-amd64.tar.gz && \
-  tar -zxvf go${GO_V}.linux-amd64.tar.gz && \
-  mkdir -p $GOPATH/bin && \
-  curl https://glide.sh/get | sh
+  tar -zxvf go${GO_V}.linux-amd64.tar.gz
 
 # Install webp
 RUN apt-get -q -y install libjpeg-dev libpng-dev libtiff-dev libgif-dev
