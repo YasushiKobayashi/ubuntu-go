@@ -1,0 +1,13 @@
+machine:
+  timezone: Asia/Tokyo
+  services:
+    - docker
+
+dependencies:
+  pre:
+    - docker pull ubuntu:16.04
+
+test:
+  override:
+    - docker build .
+    - exit 0

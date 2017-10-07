@@ -1,0 +1,12 @@
+sudo: required
+services:
+- docker
+before_script:
+- echo 'Canada/Pacific' | sudo tee /etc/timezone
+- sudo dpkg-reconfigure --frontend noninteractive tzdata
+- docker pull ubuntu:16.04
+script:
+- docker build .
+notifications:
+  slack:
+    secure: GztTpytCve7ojZ4Gsy5tJc7TSnS9ptdsINJyYiTazs0NwdLOQXOM0qPw7y6AZG8l+aBoMCp5hwbG6/3VwVdl7FOLcMa2rxaAX9ICS4mgpLAXqX2M15v/0sDE45P8HSmSyoVC4sYyrBRG68PPvlwx/Qcfhvh/E6ViHRrNXngynPeLbCIDQ2meXS8VS2ShR2vLgH+OHbur8IEyhWErH+hgowHspySI4q0jUo0cKGKgsvhJB7r2m5i2uNVgP22NRDlvNIKD4bywKzgSk4oo2r/8ECMEjpKdi8qaSSL4vVlYfu/Vo1UHhDf4xNyTdGGNoigDNVpL0+KWwLmgqvBADP2oRAWl5yrmBoynbYzl8FnBfgAFXsuqbyVicCJnP+KR9+uTndzXWTnd6/cVRWciBFXSiBQrDtzNywlAwA9GllG8NgFREmIyWPP5N1Fh1j6XauccO5gFUpMb/K+17bPU2eYKv7fqrm35cBVXJlRGP5UxruwmDbpJqLJaAEWcStzKR8ex4ls3YxV7tmmCMy/UWYeKWSatFKKi53sSmLHXHLeMd4+oa+uhXCRndKyBz9hwGVeoNR8a2WooZWpZ1QVo+1uJ2/FuV47ZixYK9o+uBtqDFYnDUWVKGBX/nNfizaMIinTICUGWuqr+oTjFO/bUk53084XxoCFfdy0KGwTroDVGIlM=
