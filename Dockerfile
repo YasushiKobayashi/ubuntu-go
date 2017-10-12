@@ -18,7 +18,7 @@ RUN wget -q -O - https://storage.googleapis.com/golang/go${GO_V}.linux-amd64.tar
 ENV LIBWEBP_V 0.4.2
 RUN apt-get update && \
   apt-get install -y libjpeg-dev libpng-dev libtiff-dev libgif-dev
-RUN wget -q -O - http://downloads.webmproject.org/releases/webp/libwebp-${LIBWEBP_V}.tar.gz | tar zxf - && \ && \
+RUN wget -q -O - http://downloads.webmproject.org/releases/webp/libwebp-${LIBWEBP_V}.tar.gz | tar zxf - && \
   cd libwebp-${LIBWEBP_V} && \
   ./configure && \
   make && make install && make clean
