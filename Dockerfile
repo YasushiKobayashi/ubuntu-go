@@ -9,7 +9,7 @@ RUN apt-get update && \
 WORKDIR /usr/local
 ENV GO_V 1.9.1
 ENV PATH=$PATH:/usr/local/go/bin
-ENV GOPATH=/work/go
+ENV GOPATH=/go
 ENV PATH=$PATH:$GOPATH/bin
 RUN wget -q -O - https://storage.googleapis.com/golang/go${GO_V}.linux-amd64.tar.gz | tar zxf - && \
   mkdir -p $GOPATH
