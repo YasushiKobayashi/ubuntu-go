@@ -29,7 +29,7 @@ RUN wget -q -O - http://downloads.webmproject.org/releases/webp/libwebp-${LIBWEB
 
 # install imagemagick
 WORKDIR /tmp
-ENV IMAGE_MAGIC_V 7.0.7-7
+ENV IMAGE_MAGIC_V 7.0.7-8
 RUN wget -q -O - http://www.imagemagick.org/download/ImageMagick-${IMAGE_MAGIC_V}.tar.gz | tar zxf - && \
   cd ImageMagick-* && \
   ./configure && \
